@@ -1,0 +1,17 @@
+version: '3.8'  # Specify the version of Docker Compose
+
+services:  # Define the services under this key
+  db:
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: changemeinprod!
+      MYSQL_DATABASE: taskstracking
+
+  adminer:
+    image: adminer:latest
+    restart: always
+    ports:
+      - "8888:8080"
